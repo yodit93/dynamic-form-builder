@@ -7,7 +7,6 @@ const CreateForm = () => {
     title: '',
     description: ''
 });
-console.log(userInput)
     const handleChange = (e) => {
         setUserInput({
             ...userInput,
