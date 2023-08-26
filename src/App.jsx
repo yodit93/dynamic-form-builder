@@ -1,8 +1,7 @@
-import CreateForm from "./components/CreateForm"
+import CreateForm from "./components/Createform"
 import DynamicFormBuilder from "./components/DynamicFormBuilder"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 function App() {
-
   return (
     <Router>
       <Routes>
