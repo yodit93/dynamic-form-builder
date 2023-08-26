@@ -60,7 +60,7 @@ const RenderFormField = ({ fieldType }) => {
       return <Upload>
         <label>{fieldType.customization.label}</label>
       <Button icon={<UploadOutlined />}>Upload File</Button>
-      {fieldType.customization.allowedFormats && <p>Allowed formats are {fieldType.customization.allowedFormats}</p>}
+      {fieldType.customization.allowedFormats && <p>Allowed formats are only {fieldType.customization.allowedFormats}</p>}
     </Upload>;
     case 'Image Upload':
       return <Upload>

@@ -6,8 +6,8 @@ import { updateField } from '../Redux/formFieldsSlice';
 
 const CustomizationForm = ({fieldType}) => {
   const [customization, setCustomization] = useState({
-    label: 'Enter label',
-    placeholder: 'Enter placeholder',
+    label: '',
+    placeholder: '',
     options: [],
     validation: {required: false, minLength: 0, maxLength: 0},
     allowedFormats: "",
@@ -55,170 +55,190 @@ const CustomizationForm = ({fieldType}) => {
       case 'Email':
       case 'Password':
         return (
-          <div>
-            <Input 
-            name="label" 
-            value={customization.label} 
-            placeholder="Write label here"
-            onChange={handleChange}
-            />
-            <Input 
-            name="placeholder"
-            value={customization.placeholder}
-            onChange={handleChange}
-            placeholder="Write placeholder here"/>
-            <Checkbox
-            name="required"
-            checked={customization.validation.required}
-            onChange={handleCheckboxChange}
-            >
-              Required</Checkbox>
+          <div className="edit-form-container">
+            <div className="edit-form">
+              <Input 
+              name="label" 
+              value={customization.label} 
+              placeholder="Write label here"
+              onChange={handleChange}
+              />
+              <Input 
+              name="placeholder"
+              value={customization.placeholder}
+              onChange={handleChange}
+              placeholder="Write placeholder here"/>
+              <Checkbox
+              name="required"
+              checked={customization.validation.required}
+              onChange={handleCheckboxChange}
+              >
+                Required</Checkbox>
+                <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+            </div>
+            <div className="overlay"></div>
           </div>
         )
       case 'Text':
         return (
-          <div>
-            <Input 
-            name="label" 
-            value={customization.label} 
-            placeholder="Write label here"
-            onChange={handleChange}
-            />
-            <Input 
-            name="placeholder"
-            value={customization.placeholder}
-            onChange={handleChange}
-            placeholder="Write placeholder here"/>
-            <Checkbox
-            name="required"
-            checked={customization.validation.required}
-            onChange={handleCheckboxChange}
-            >
-              Required</Checkbox>
-            <InputNumber
-            name="minLength"
-            value={customization.validation.minLength}
-            onChange={(value) => handleValidationChange(value, 'minLength')}
-            />
-            <InputNumber
-            name="maxLength"
-            value={customization.validation.maxLength}
-            onChange={(value) => handleValidationChange(value, 'maxLength')}
-            />
-            <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+          <div className="edit-form-container">
+            <div className="edit-form">       
+              <Input 
+              name="label" 
+              value={customization.label} 
+              placeholder="Write label here"
+              onChange={handleChange}
+              />
+              <Input 
+              name="placeholder"
+              value={customization.placeholder}
+              onChange={handleChange}
+              placeholder="Write placeholder here"/>
+              <Checkbox
+              name="required"
+              checked={customization.validation.required}
+              onChange={handleCheckboxChange}
+              >
+                Required</Checkbox>
+              <InputNumber
+              name="minLength"
+              value={customization.validation.minLength}
+              onChange={(value) => handleValidationChange(value, 'minLength')}
+              />
+              <InputNumber
+              name="maxLength"
+              value={customization.validation.maxLength}
+              onChange={(value) => handleValidationChange(value, 'maxLength')}
+              />
+              <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+            </div>
+            <div className="overlay"></div>
           </div>
         );
       case 'Number':
         return (
-          <div>
-            <Input 
-            name="label" 
-            value={customization.label} 
-            placeholder="Write label here"
-            onChange={handleChange}
-            />
-            <Checkbox
-            name="required"
-            checked={customization.validation.required}
-            onChange={handleCheckboxChange}
-            >
-              Required</Checkbox>
-            <InputNumber
-            name="minLength"
-            value={customization.validation.minLength}
-            onChange={(value) => handleValidationChange(value, 'minLength')}
-            />
-            <InputNumber
-            name="maxLength"
-            value={customization.validation.maxLength}
-            onChange={(value) => handleValidationChange(value, 'maxLength')}
-            />
-            <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+          <div className="edit-form-container">
+            <div className="edit-form">
+              <Input 
+              name="label" 
+              value={customization.label} 
+              placeholder="Write label here"
+              onChange={handleChange}
+              />
+              <Checkbox
+              name="required"
+              checked={customization.validation.required}
+              onChange={handleCheckboxChange}
+              >
+                Required</Checkbox>
+              <InputNumber
+              name="minLength"
+              value={customization.validation.minLength}
+              onChange={(value) => handleValidationChange(value, 'minLength')}
+              />
+              <InputNumber
+              name="maxLength"
+              value={customization.validation.maxLength}
+              onChange={(value) => handleValidationChange(value, 'maxLength')}
+              />
+              <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+            </div>
+            <div className="overlay"></div>
           </div>
         );
       case 'Checkbox':
         return (
-          <div>
-           <Input 
-            name="label" 
-            value={customization.label} 
-            placeholder="Write label here"
-            onChange={handleChange}
-            />
-            <Input
-            name="options"
-            value={customization.options}
-            onChange={handleOptionChange}
-            placeholder="Write options here separated by comma"
-            />
-            <Checkbox
-            name="required"
-            checked={customization.validation.required}
-            onChange={handleCheckboxChange}
-            >
-              Required</Checkbox>
-            <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+          <div className="edit-form-container">
+            <div className="edit-form">
+            <Input 
+              name="label" 
+              value={customization.label} 
+              placeholder="Write label here"
+              onChange={handleChange}
+              />
+              <Input
+              name="options"
+              value={customization.options}
+              onChange={handleOptionChange}
+              placeholder="Write options here separated by comma"
+              />
+              <Checkbox
+              name="required"
+              checked={customization.validation.required}
+              onChange={handleCheckboxChange}
+              >
+                Required</Checkbox>
+              <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+            </div>
+            <div className="overlay"></div>
           </div>
         );
       case 'Select':
       case 'MultiSelect':
         return (
-          <div>
-            <Input 
-            name="label" 
-            value={customization.label} 
-            placeholder="Write label here"
-            onChange={handleChange}
-            />
-            <Input 
-            name="placeholder"
-            value={customization.placeholder}
-            onChange={handleChange}
-            placeholder="Write placeholder here"/>
-            <Checkbox
-            name="required"
-            checked={customization.validation.required}
-            onChange={handleCheckboxChange}
-            >
-              Required</Checkbox>
-            <Input
-            name="options"
-            value={customization.options}
-            onChange={handleOptionChange}
-            placeholder="Write options here separated by comma"
-            />
-            <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+          <div className="edit-form-container">
+            <div className="edit-form">
+              <Input 
+              name="label" 
+              value={customization.label} 
+              placeholder="Write label here"
+              onChange={handleChange}
+              />
+              <Input 
+              name="placeholder"
+              value={customization.placeholder}
+              onChange={handleChange}
+              placeholder="Write placeholder here"/>
+              <Checkbox
+              name="required"
+              checked={customization.validation.required}
+              onChange={handleCheckboxChange}
+              >
+                Required</Checkbox>
+              <Input
+              name="options"
+              value={customization.options}
+              onChange={handleOptionChange}
+              placeholder="Write options here separated by comma"
+              />
+              <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+            </div>
+            <div className="overlay"></div>
           </div>
         );
       case 'Radio':
         return (
-          <div>
-            <Input 
-            name="label" 
-            value={customization.label} 
-            placeholder="Write label here"
-            onChange={handleChange}
-            />
-            <Input
-            name="options"
-            value={customization.options}
-            onChange={handleOptionChange}
-            placeholder="Write options here separated by comma"
-            />
-            <Checkbox
-            name="required"
-            checked={customization.validation.required}
-            onChange={handleCheckboxChange}
-            >
-              Required</Checkbox>
-            <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+          <div className="edit-form-container">
+            <div className="edit-form">
+              <Input 
+              name="label" 
+              value={customization.label} 
+              placeholder="Write label here"
+              onChange={handleChange}
+              />
+              <Input
+              name="options"
+              value={customization.options}
+              onChange={handleOptionChange}
+              placeholder="Write options here separated by comma"
+              />
+              <Checkbox
+              name="required"
+              checked={customization.validation.required}
+              onChange={handleCheckboxChange}
+              >
+                Required</Checkbox>
+              <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+            </div>
+            <div className="overlay"></div>
           </div>
         );
       case 'File Upload':
       case 'Image Upload':
       case 'Video Upload':
         return (
-          <div>
+          <div className="edit-form-container">
+          <div className="edit-form">
             <Input
             name="label"
             value={customization.label}
@@ -233,23 +253,28 @@ const CustomizationForm = ({fieldType}) => {
             />
             <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
           </div>
+          <div className="overlay"></div>
+          </div>
         );
       case 'Date':
         return (
-          <div>
-            <Input
-            name="label"
-            value={customization.label}
-            onChange={handleChange}
-            placeholder="Write label here"
-            />
-            <Checkbox
-            name="required"
-            checked={customization.validation.required}
-            onChange={handleCheckboxChange}
-            >
-              Required</Checkbox>
-            <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+          <div className="edit-form-container">
+            <div className="edit-form">
+              <Input
+              name="label"
+              value={customization.label}
+              onChange={handleChange}
+              placeholder="Write label here"
+              />
+              <Checkbox
+              name="required"
+              checked={customization.validation.required}
+              onChange={handleCheckboxChange}
+              >
+                Required</Checkbox>
+              <Button type="primary" onClick={() => handleSaveChange(fieldType)}>Save Change</Button>
+            </div>
+            <div className="overlay"></div>
           </div>
         );
       

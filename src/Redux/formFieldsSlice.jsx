@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 const initialState = {
-  formFields: [],
+  formFields: JSON.parse(localStorage.getItem('formFields')) ?? [],
 };
 
 const formFieldsSlice = createSlice({
@@ -12,7 +12,12 @@ const formFieldsSlice = createSlice({
       const newField = {
         id: uuidv4(),
         type: action.payload,
-        customization: {},
+        customization: {
+          label: "Label",
+          placeholder: "placeholder",
+          options: ["option1", "option2", "option3"],
+          validation: {},
+        },
         edit: false,
       };
       state.formFields.push(newField);
