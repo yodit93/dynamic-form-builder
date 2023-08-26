@@ -12,9 +12,7 @@ const DynamicFormBuilder = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {formFields} = useSelector((state) => state.formFields);
-  const handleSelect = (fieldType) => {
-    setSelectedFields([...selectedFields, fieldType]);
-  };
+  
   const handleRemove = (id) => {
     dispatch(removeField(id));
   };
@@ -23,13 +21,13 @@ const DynamicFormBuilder = () => {
   }
   const handleSaveForm = () => {
     localStorage.setItem('formFields', JSON.stringify(formFields));
-    navigate('/my-form');
+    navigate('/dynamic-form-builder/my-form');
   };
 
   return (
     <div className="dynamic-form">
       <div className="form-fields">
-        <FormFields setSelectedField={handleSelect} />
+        <FormFields />
       </div>
       <div className="preview-form">
         <NewForm />

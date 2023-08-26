@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Button } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
@@ -22,8 +22,8 @@ return (
         <div className="click-event" ref={navList}>
             <div className="close-btn" onClick={handleHide}>&#10005;</div>
             <div className="form-right">
-                <NavLink className="my-form" to="/my-form" onClick={handleHide}>My form</NavLink>
-                <NavLink className="create-form" to="/" onClick={handleHide}>Create form</NavLink>
+                <NavLink className="my-form" to="/dynamic-form-builder/my-form" onClick={handleHide}>My form</NavLink>
+                <NavLink className="create-form" to="/dynamic-form-builder" onClick={handleHide}>Create form</NavLink>
 
             </div>
         </div>

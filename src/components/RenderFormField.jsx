@@ -1,5 +1,6 @@
 import { Input, Checkbox, Select, DatePicker, Radio, InputNumber, Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import PropTypes from 'prop-types';
 const RenderFormField = ({ fieldType }) => {
   console.log(fieldType);
     switch (fieldType.type) {
@@ -82,4 +83,21 @@ const RenderFormField = ({ fieldType }) => {
     }
 };
 
+RenderFormField.propTypes = {
+  fieldType: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    customization: PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      placeholder: PropTypes.string,
+      options: PropTypes.arrayOf(PropTypes.string),
+      validation: PropTypes.shape({
+        required: PropTypes.bool,
+        minLength: PropTypes.number,
+        maxLength: PropTypes.number,
+      }),
+      allowedFormats: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+};
 export default RenderFormField;

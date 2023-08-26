@@ -18,7 +18,7 @@ const CreateForm = () => {
   };
 
   const handleSubmit = () => {
-    navigate('/form-builder');
+    navigate('/dynamic-form-builder/form-builder');
   };
 
   return (

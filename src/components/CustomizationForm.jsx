@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { Input, Button, Checkbox, InputNumber } from 'antd';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Input, Button, Checkbox, InputNumber } from 'antd';
+
 import { updateField } from '../Redux/formFieldsSlice';
 
 
@@ -284,6 +286,24 @@ const CustomizationForm = ({fieldType}) => {
   };
 
   return <div>{renderCustomizationOptions()}</div>;
+};
+
+CustomizationForm.propTypes = {
+  fieldType: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    customization: PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      placeholder: PropTypes.string,
+      options: PropTypes.arrayOf(PropTypes.string),
+      validation: PropTypes.shape({
+        required: PropTypes.bool,
+        minLength: PropTypes.number,
+        maxLength: PropTypes.number,
+      }),
+      allowedFormats: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default CustomizationForm;

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import {Form, Button} from 'antd';
+import {Form} from 'antd';
 import RenderFormField from "./RenderFormField";
 import NewForm from "./NewForm";
 const MyForm = () => {
@@ -12,9 +12,6 @@ const MyForm = () => {
                     {formFields.map((fieldType) => (
                     <Form.Item key={fieldType.id}>
                         <RenderFormField fieldType={fieldType} />
-                        <Button onClick={() => handleRemove(fieldType.id)} style={{margin: '1rem'}}>-</Button>
-                        <Button onClick={() => handleEdit(fieldType.id)}>Edit</Button>
-                        {fieldType.edit && <CustomizationForm fieldType={fieldType} />}
                     </Form.Item>
                     ))}
                 </Form>
