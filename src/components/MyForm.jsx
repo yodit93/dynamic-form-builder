@@ -11,13 +11,13 @@ const MyForm = () => {
         <div className="my-form-cont">
             <div className="preview-form">
                 <NewForm />
-                <Form>
+                <Form action="https://formspree.io/f/mpzgdnpp" method="POST" onSubmit={handleSubmit}>
                     {formFields.map((fieldType) => (
                     <Form.Item key={fieldType.id}>
                         <RenderFormField fieldType={fieldType} />
                     </Form.Item>
                     ))}
-                    <Button type="primary" onClick={handleSubmit}>Submit</Button>
+                    {formFields.length > 0 && <Button type="primary">Submit</Button>}
                 </Form>
             </div>
         </div>
