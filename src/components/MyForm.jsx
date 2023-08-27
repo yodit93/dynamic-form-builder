@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux";
-import {Form} from 'antd';
+import {Button, Form} from 'antd';
 import RenderFormField from "./RenderFormField";
 import NewForm from "./NewForm";
 const MyForm = () => {
     const {formFields} = useSelector((state) => state.formFields);
+    const handleSubmit = (e) => {
+        console.log(e.target);
+    }
     return (
         <div className="my-form-cont">
             <div className="preview-form">
@@ -14,6 +17,7 @@ const MyForm = () => {
                         <RenderFormField fieldType={fieldType} />
                     </Form.Item>
                     ))}
+                    <Button type="primary" onClick={handleSubmit}>Submit</Button>
                 </Form>
             </div>
         </div>

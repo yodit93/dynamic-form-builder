@@ -7,22 +7,28 @@ const RenderFormField = ({ fieldType }) => {
       case 'Input':
         return <div>
             <label>{fieldType.customization.label}</label>
-            <Input placeholder={fieldType.customization.placeholder} />
+            <Input placeholder={fieldType.customization.placeholder} {...(fieldType.customization.validation.required && { required: 'required' })}/>
           </div>;
       case 'Text':
         return <div>
             <label>{fieldType.customization.label}</label>
-            <Input.TextArea  rows={4} placeholder={fieldType.customization.placeholder} />
+            <Input.TextArea
+            rows={4} 
+            placeholder={fieldType.customization.placeholder}
+            {...(fieldType.customization.validation.required && { required: 'required' })}
+            minLength={fieldType.customization.validation.minLength}
+            maxLength={fieldType.customization.validation.maxLength}
+            />
           </div>;
       case 'Checkbox':
         return <div>
           <label>{fieldType.customization.label}</label>
-          <Checkbox.Group options={fieldType.customization.options} />
+          <Checkbox.Group options={fieldType.customization.options} {...(fieldType.customization.validation.required && { required: 'required' })}/>
       </div>;
       case 'Select':
         return <div>
         <label>{fieldType.customization.label}</label>
-        <Select placeholder="Select an option">
+        <Select placeholder="Select an option" {...(fieldType.customization.validation.required && { required: 'required' })}>
         {fieldType.customization.options && fieldType.customization.options.map((option) => (
           <Select.Option key={option} value={option}>{option}</Select.Option>
         ))}
@@ -31,27 +37,27 @@ const RenderFormField = ({ fieldType }) => {
       case 'Radio':
         return <div>
         <label>{fieldType.customization.label}</label>
-        <Radio.Group options={fieldType.customization.options} />
+        <Radio.Group options={fieldType.customization.options} {...(fieldType.customization.validation.required && { required: 'required' })}/>
     </div>;
       case 'Number':
       return <div>
       <label>{fieldType.customization.label}</label>
-      <InputNumber  min={0} max={100} />
+      <InputNumber  min={fieldType.customization.validation.minLength} max={fieldType.customization.validation.maxLength} {...(fieldType.customization.validation.required && { required: 'required' })}/>
   </div>;
     case 'Email':
       return <div>
       <label>{fieldType.customization.label}</label>
-      <Input type="email" placeholder={fieldType.customization.placeholder} />
+      <Input type="email" placeholder={fieldType.customization.placeholder} {...(fieldType.customization.validation.required && { required: 'required' })}/>
     </div>;
     case 'Password':
       return <div>
       <label>{fieldType.customization.label}</label>
-      <Input.Password type="email" placeholder={fieldType.customization.placeholder} />
+      <Input.Password type="email" placeholder={fieldType.customization.placeholder} {...(fieldType.customization.validation.required && { required: 'required' })}/>
     </div>;
     case 'MultiSelect':
       return <div>
         <label>{fieldType.customization.label}</label>
-        <Select placeholder="Select an option" mode="multiple">
+        <Select placeholder="Select an option" mode="multiple" {...(fieldType.customization.validation.required && { required: 'required' })}>
         {fieldType.customization.options && fieldType.customization.options.map((option) => (
           <Select.Option key={option} value={option}>{option}</Select.Option>
         ))}
@@ -76,7 +82,7 @@ const RenderFormField = ({ fieldType }) => {
       case 'Date':
         return <div>
             <label>{fieldType.customization.label}</label>
-            <DatePicker />
+            <DatePicker {...(fieldType.customization.validation.required && { required: 'required' })}/>
           </div>;
       default:
         return null;
