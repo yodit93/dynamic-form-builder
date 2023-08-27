@@ -35,11 +35,15 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- Features -->
+<!-- Key Features -->
 
 ### Key Features <a name="key-features"></a>
-- Responsive
-- Mobile first
+- Responsive / Mobile First
+- Focused on Functionality.
+- Dynamic form
+- Create a form
+- Edit a form.
+- Realtime form preview
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -74,6 +78,17 @@ Clone this repository to your desired folder:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Install
+
+Install this project with:
+
+```sh
+  
+  gh repo clone yodit93/dynamic-form-builder
+  cd dynamic-form-builder
+  npm install -y
+```
+
 ### Usage 
  To run the project, execute the following command:
 
@@ -92,6 +107,12 @@ Clone this repository to your desired folder:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🔭 Future Features <a name="future-features"></a>
+
+> I'll add the following section to the webpage.
+
+- [ ] **Better UI Design**
+- [ ] **Connect with Backend to store user's data**
 
 
 <!-- CONTRIBUTING -->
