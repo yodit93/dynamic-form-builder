@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,700;1,900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 a {
   text-decoration: none;
-  font-size: 1rem;
 }
 
 label {
@@ -26,9 +32,9 @@ label {
 
 .my-logo {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
-  color: white;
+  color: #fff;
 }
 
 .menu {
@@ -100,6 +106,7 @@ label {
 .create-form-cont {
   display: flex;
   width: 100vw;
+  height: 100vh;
   padding: 70px 1rem 0;
   flex-direction: column;
   justify-content: center;
@@ -113,7 +120,25 @@ label {
 }
 
 .create-title {
+  font-size: 1.5rem;
   text-align: center;
+}
+
+#start-btn-cont button {
+  width: 20%;
+  height: 30px;
+  background-color: #4b4747;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+
+#start-btn-cont button:hover {
+  width: 23%;
+  height: 35px;
+  background-color: #635f5f;
 }
 
 .toggle-event {
@@ -282,20 +307,34 @@ label {
     gap: 2rem;
     list-style: none;
     margin-right: 1rem;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   .menu-toggle {
     display: none;
   }
 
-  .my-form,
-  .create-form {
+  .form-right a {
     color: white;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+  }
+
+  .form-right a:hover {
+    color: #00ff00;
   }
 
   .row-cont {
     width: 60%;
+  }
+
+  .create-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .form-item {
+    display: flex;
   }
 
   .form-start {
@@ -304,8 +343,26 @@ label {
     gap: 1rem;
   }
 
-  .form-start-btn {
-    align-self: center;
+  #start-btn-cont {
+    display: flex;
+    justify-content: center;
+  }
+
+  #start-btn-cont button {
+    margin-top: 1rem;
+    width: 20%;
+    height: 45px;
+    background-color: #4b4747;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #start-btn-cont button:hover {
+    width: 23%;
+    height: 50px;
+    background-color: #635f5f;
   }
 
   .dynamic-form {

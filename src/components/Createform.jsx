@@ -26,7 +26,12 @@ const CreateForm = () => {
       <h2 className="create-title">Start Creating your Form</h2>
       <Row justify="center">
         <Col xs={24} sm={20} md={16} lg={12}>
-          <Form onFinish={handleSubmit}>
+          <Form
+          onFinish={handleSubmit}
+          labelAlign="left"
+          labelCol={{ xs: 24, sm: 6 }} // Control label alignment on different screen sizes
+          wrapperCol={{ xs: 24, sm: 18 }} // Control input field alignment on different screen sizes
+          >
             <Form.Item
               label="Title"
               name="title"
@@ -52,9 +57,11 @@ const CreateForm = () => {
               />
             </Form.Item>
             <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Start
-              </Button>
+              <div id="start-btn-cont">
+                <Button type="primary" htmlType="submit">
+                    Start
+                </Button>
+              </div>
             </Form.Item>
           </Form>
         </Col>
