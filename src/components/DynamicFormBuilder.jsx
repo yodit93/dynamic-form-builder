@@ -34,13 +34,15 @@ const DynamicFormBuilder = () => {
         <Form>
             {formFields.map((fieldType) => (
               <Form.Item key={fieldType.id}>
+                <div className="each-field">
                   <RenderFormField fieldType={fieldType} />
-                  <Button onClick={() => handleRemove(fieldType.id)} style={{margin: '1rem'}}>-</Button>
+                  <Button onClick={() => handleRemove(fieldType.id)}>-</Button>
                   <Button onClick={() => handleEdit(fieldType.id)}>Edit</Button>
-                  {fieldType.edit && <CustomizationForm fieldType={fieldType} />}
+                </div>
+                {fieldType.edit && <CustomizationForm fieldType={fieldType} />}
               </Form.Item>
             ))}
-            <Button type="primary" onClick={handleSaveForm}>Save Form</Button>
+            <Button className="save-form-btn" type="primary" onClick={handleSaveForm}>Save Form</Button>
         </Form>
       </div>
     </div>
