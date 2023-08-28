@@ -2,16 +2,18 @@ import { useSelector } from "react-redux";
 import {Button, Form} from 'antd';
 import RenderFormField from "./RenderFormField";
 import NewForm from "./NewForm";
+import { useForm } from '@formspree/react';
 const MyForm = () => {
     const {formFields} = useSelector((state) => state.formFields);
-    const handleSubmit = (e) => {
-        console.log(e.target);
-    }
+    const [state, handleSubmit] = useForm("mpzgdnpp");
+    if (state.succeeded) {
+        return <p>Thanks for submitting!</p>;
+    } 
     return (
         <div className="my-form-cont">
             <div className="preview-form">
                 <NewForm />
-                <Form action="https://formspree.io/f/mpzgdnpp" method="POST" onSubmit={handleSubmit}>
+                <Form onFinish={handleSubmit}>
                     {formFields.map((fieldType) => (
                     <Form.Item key={fieldType.id}>
                         <RenderFormField fieldType={fieldType} />

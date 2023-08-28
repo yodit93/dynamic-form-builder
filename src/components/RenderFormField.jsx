@@ -2,7 +2,6 @@ import { Input, Checkbox, Select, DatePicker, Radio, InputNumber, Upload, Button
 import { UploadOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 const RenderFormField = ({ fieldType }) => {
-  console.log(fieldType);
     switch (fieldType.type) {
       case 'Input':
         return <div>

@@ -33,7 +33,6 @@ const formFieldsSlice = createSlice({
     },
     removeField: (state, action) => {
       const fieldId  = action.payload;
-      console.log(fieldId)
       state.formFields = state.formFields.filter(field => field.id !== fieldId);
     },
     editField: (state, action) => {
