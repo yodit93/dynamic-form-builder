@@ -19,7 +19,7 @@ const FormFields = () => {
     return (
         <>
             <Button className="field-add-btn" type="primary" htmlType="submit" onClick={handleShow}>
-                <PlusOutlined /> Add
+                <PlusOutlined />
             </Button>
             <div className="toggle-event" ref={formList}>
                 <div className="close-btn" onClick={handleHide}>&#10005;</div>

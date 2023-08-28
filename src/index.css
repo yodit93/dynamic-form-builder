@@ -18,7 +18,7 @@ label {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #f0f0f0;
+  background-color: #635f5f;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -28,7 +28,7 @@ label {
   font-size: 1.5rem;
   font-weight: bold;
   font-style: italic;
-  color: #202e34d4;
+  color: white;
 }
 
 .menu {
@@ -45,6 +45,14 @@ label {
 .menu-toggle {
   display: block;
   cursor: pointer;
+  border: none;
+  background-color: #635f5f;
+}
+
+.menu-toggle svg {
+  width: 25px;
+  height: 25px;
+  fill: white;
 }
 
 .menu-toggle:hover .form-right {
@@ -206,10 +214,28 @@ label {
 
 .field-add-btn {
   position: fixed;
-  background-color: #555252;
+  background-color: rgb(85, 82, 82);
   top: 15%;
-  left: 2%;
+  left: 0;
   z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  animation: shadowAnimation 0.6s infinite alternate;
+}
+
+@keyframes shadowAnimation {
+  0% {
+    box-shadow: 0 0 3px rgba(85, 82, 82, 0.5); 
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(85, 82, 82, 0.5);
+  }
 }
 
 .field-cont {
@@ -265,7 +291,7 @@ label {
 
   .my-form,
   .create-form {
-    color: blueviolet;
+    color: white;
   }
 
   .row-cont {
