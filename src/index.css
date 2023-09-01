@@ -253,8 +253,8 @@ label {
 .field-add-btn {
   position: fixed;
   background-color: rgb(22, 119, 255);
-  top: 15%;
-  left: 0;
+  top: 11%;
+  left: 1%;
   z-index: 1;
   width: 40px;
   height: 40px;
@@ -273,9 +273,6 @@ label {
 }
 
 @keyframes shadowAnimation {
-  0% {
-    box-shadow: 0 0 3px rgba(22, 119, 255, 0.5); 
-  }
   100% {
     box-shadow: 0 0 0 4px rgba(22, 119, 255, 0.5);
   }
