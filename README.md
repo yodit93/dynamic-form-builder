@@ -20,7 +20,7 @@
 
 # 📖 Dynamic Form Builder: <a name="about-project"></a>
 
-> Dynamic Form builder is a front end project that allows users to create forms dynamically. The user can add different types of fields to the form and also delete them. The user can also preview the form before submitting it.
+> Dynamic Form builder is a front end project that allows users to create forms dynamically. The user can add different types of fields to the form and also delete them. The user can also preview the form while building in real time.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
