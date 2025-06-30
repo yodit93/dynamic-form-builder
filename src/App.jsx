@@ -8,9 +8,9 @@ function App() {
     <Router>
       <NavigationBar />
       <Routes>
-        <Route path="/dynamic-form-builder/" element={<CreateForm />} />
-        <Route path="/dynamic-form-builder/my-form" element={<MyForm />} />
-        <Route path="/dynamic-form-builder/form-builder" element={<DynamicFormBuilder />} />
+        <Route path="/" element={<CreateForm />} />
+        <Route path="/my-form" element={<MyForm />} />
+        <Route path="/form-builder" element={<DynamicFormBuilder />} />
       </Routes>
     </Router> 
   )
