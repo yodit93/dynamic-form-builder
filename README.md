@@ -53,7 +53,7 @@
 
 > Link to deployed project.
 
-- [Live Demo Link](https://yodit93.github.io/dynamic-form-builder/)
+- [Live Demo Link](https://dynamic-form-builder-pi.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
