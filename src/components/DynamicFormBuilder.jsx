@@ -21,7 +21,7 @@ const DynamicFormBuilder = () => {
   }
   const handleSaveForm = () => {
     localStorage.setItem('formFields', JSON.stringify(formFields));
-    navigate('/dynamic-form-builder/my-form');
+    navigate('/my-form');
   };
 
   return (
